@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <title></title>
+        <style type="text/css">
+            body, html {
+
+                font-family: "微软雅黑";
+            }
+            #allmap {
+                width: 100%;
+                height: 500px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" type="text/css" href="css/my.css"/>
+        <link rel="stylesheet" type="text/css" href="css/gundong.css"/>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yaDRGoon5YoRzAAwH781yUgn"></script>
+    </head>
+
+    <body>
+   
+            <div class="ub">
+            <!-- <div id="" class="ub-f1 ">
+                <img src="img/lb.png" style="height:0.3em;"/>
+            </div> -->
+            <div id="demo" class="ub-f2"  style="overflow:hidden;height:0.3em;width:100%;margin-left: 1em;">
+                <div id="demo1"> 
+                    <a href="#" style="font-size: 0.3em;">恭喜“156****7788”获得10元代金券</a><br />
+                    <a href="#" style="font-size: 0.3em;">恭喜“158****5848”获得100元代金券</a><br />
+                    <a href="#" style="font-size: 0.3em;">恭喜“136****8745”获得10元代金券</a><br />
+
+                </div>
+                <div id="demo2"></div>
+            </div>
+         </div>
+         
+        <div id="r-result" class="ub ub-ac ubb" style="height: 1em;">
+            <div class=" uinput1 ub ub-f1">
+                <div class="uinn4 fa fa-automobile sc-text  " style=""></div>
+                <input placeholder="输入你的地点" id="suggestId"  type="text" class="ub-f1">
+            </div>
+        </div>
+        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:15em;height:15em; display:none;"></div>
+        <div class="ub ub-ac" id="allmap" ></div>
+  
+  
+      
+    </body>
+
+    <script type="text/javascript">
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(118.342512, 32.297178);
+        map.centerAndZoom(point, 16);
+        map.enableScrollWheelZoom(true);
+
+        var myIcon = new BMap.Icon("img/aj.png", new BMap.Size(50, 50));
+        //======================第一人
+        var vectorFOArrow = new BMap.Marker(new BMap.Point(118.321006, 32.283076), {
+            icon : myIcon
+        });
+        vectorFOArrow.addEventListener("click", attribute);
+        map.addOverlay(vectorFOArrow);
+        map.setViewport({
+            center : new BMap.Point(118.321006, 32.283076),
+            zoom : 14
+        })
+        var opts = {
+            width : 250, //信息窗口宽度height:100,//信息窗口高度
+            title : "陈冰"//信息窗口标题
+        }
+        function attribute() {
+            var sContent = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>陈冰</h4>" + "<img style='float:right;margin:4px' id='imgDemo' src='css/res/ren1.jpg' width='50' height='50' title='wwd'/>" + "<p style='line-height:1.5;font-size:13px;'>代驾：95次，驾龄：5年</p><p style='line-height:1.5;font-size:8px;'><a href='sjxx/ren1.html' style='color:blue;'>个人信息</a></p>" + "</div>";
+            
+            var point1 = new BMap.Point(118.321006, 32.283076);
+            var infoWindow = new BMap.InfoWindow(sContent);
+            //创建信息窗口对象
+            map.openInfoWindow(infoWindow, point1);
+            //打开信息窗口
+        }
+
+        //=====================第二人
+        var vectorFOArrow2 = new BMap.Marker(new BMap.Point(118.324653, 32.282725), {
+            icon : myIcon
+        });
+        vectorFOArrow2.addEventListener("click", attribute2);
+        map.addOverlay(vectorFOArrow2);
+        map.setViewport({
+            center : new BMap.Point(118.324653, 32.282725),
+            zoom : 14
+        })
+        var opts2 = {
+            width : 250, //信息窗口宽度height:100,//信息窗口高度
+            title : "武卫东"//信息窗口标题
+        }
+        function attribute2() {
+            var sContent = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>武卫东</h4>" + "<img style='float:right;margin:4px' id='imgDemo' src='css/res/ren2.jpg' width='50' height='50' title='wwd'/>" + "<p style='line-height:1.5;font-size:13px;'>代驾：60次，驾龄：2年</p><p style='line-height:1.5;font-size:8px;'><a href='sjxx/ren2.html' style='color:blue;'>个人信息</a></p>" + "</div>";
+            var point1 = new BMap.Point(118.324653, 32.282725);
+            var infoWindow = new BMap.InfoWindow(sContent);
+            //创建信息窗口对象
+            map.openInfoWindow(infoWindow, point1);
+            //打开信息窗口
+        }
+
+        //================第三人
+        var vectorFOArrow3 = new BMap.Marker(new BMap.Point(118.318239, 32.317549), {
+            icon : myIcon
+        });
+        vectorFOArrow3.addEventListener("click", attribute3);
+        map.addOverlay(vectorFOArrow3);
+        map.setViewport({
+            center : new BMap.Point(118.318239, 32.317549),
+            zoom : 14
+        })
+        var opts3 = {
+            width : 250, //信息窗口宽度height:100,//信息窗口高度
+            title : "程玲"//信息窗口标题
+        }
+        function attribute3() {
+            var sContent = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>程玲</h4>" + "<img style='float:right;margin:4px' id='imgDemo' src='css/res/ren3.jpg' width='50' height='50' title='cl'/>" + "<p style='line-height:1.5;font-size:13px;'>代驾：80次，驾龄：4年</p><p style='line-height:1.5;font-size:8px;'><a href='sjxx/ren3.html' style='color:blue;'>个人信息</a></p>" + "</div>";
+            var point1 = new BMap.Point(118.318239, 32.317549);
+            var infoWindow = new BMap.InfoWindow(sContent);
+            //创建信息窗口对象
+            map.openInfoWindow(infoWindow, point1);
+            //打开信息窗口
+        }
+
+        //==============第四人
+        var vectorFOArrow4 = new BMap.Marker(new BMap.Point(118.330097, 32.311629), {
+            icon : myIcon
+        });
+        vectorFOArrow4.addEventListener("click", attribute4);
+        map.addOverlay(vectorFOArrow4);
+        map.setViewport({
+            center : new BMap.Point(118.330097, 32.311629),
+            zoom : 14
+        })
+        var opts4 = {
+            width : 250, //信息窗口宽度height:100,//信息窗口高度
+            title : "刘德"//信息窗口标题
+        }
+        function attribute4() {
+            var sContent = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>刘德</h4>" + "<img style='float:right;margin:4px' id='imgDemo' src='css/res/ren4.jpg' width='50' height='50' title='cl'/>" + "<p style='line-height:1.5;font-size:13px;'>代驾：70次，驾龄：4年</p><p style='line-height:1.5;font-size:8px;'><a href='sjxx/ren4.html' style='color:blue;'>个人信息</a></p>" + "</div>";
+            var point1 = new BMap.Point(118.330097, 32.311629);
+            var infoWindow = new BMap.InfoWindow(sContent);
+            //创建信息窗口对象
+            map.openInfoWindow(infoWindow, point1);
+            //打开信息窗口
+        }
+
+
+        // ================搜索框相关======================
+        function G(id) {
+            return document.getElementById(id);
+        }
+
+        var ac = new BMap.Autocomplete(//建立一个自动完成的对象
+        {
+            "input" : "suggestId",
+            "location" : map
+        });
+
+        ac.addEventListener("onhighlight", function(e) {//鼠标放在下拉列表上的事件
+            var str = "";
+            var _value = e.fromitem.value;
+            var value = "";
+            if (e.fromitem.index > -1) {
+                value = _value.province + _value.city + _value.district + _value.street + _value.business;
+            }
+            str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+            value = "";
+            if (e.toitem.index > -1) {
+                _value = e.toitem.value;
+                value = _value.province + _value.city + _value.district + _value.street + _value.business;
+            }
+            str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+            G("searchResultPanel").innerHTML = str;
+        });
+
+        var myValue;
+        ac.addEventListener("onconfirm", function(e) {//鼠标点击下拉列表后的事件
+            var _value = e.item.value;
+            myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+            G("searchResultPanel").innerHTML = "onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+            setPlace();
+        });
+
+        function setPlace() {
+
+            function myFun() {
+                var pp = local.getResults().getPoi(0).point;
+                //获取第一个智能搜索的结果
+                map.centerAndZoom(pp, 18);
+                map.addOverlay(new BMap.Marker(pp));
+                //添加标注
+            }
+
+            var local = new BMap.LocalSearch(map, {//智能搜索
+                onSearchComplete : myFun
+            });
+            local.search(myValue);
+        }
+
+        //ip定位
+        // function myFun(result) {
+            // var cityName = result.name;
+            // map.setCenter(cityName);
+            // //alert("当前定位城市:"+cityName);
+        // }
+// 
+        // var myCity = new BMap.LocalCity();
+        // myCity.get(myFun);
+
+//=====================================================================================
+  var myP1 = new BMap.Point(118.320188,32.281909);    //起点
+    var myP2 = new BMap.Point(118.324653, 32.282725);    //终点
+    var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/Mario.png", new BMap.Size(32, 70), {    //小车图片
+      //offset: new BMap.Size(0, -5),    //相当于CSS精灵
+      imageOffset: new BMap.Size(0, 0)    //图片的偏移量。为了是图片底部中心对准坐标点。
+      });
+    var driving2 = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});    //驾车实例
+    driving2.search(myP1, myP2);    //显示一条公交线路
+
+    window.run = function (){
+      var driving = new BMap.DrivingRoute(map);    //驾车实例
+      driving.search(myP1, myP2);
+      driving.setSearchCompleteCallback(function(){
+        var pts = driving.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+        var paths = pts.length;    //获得有几个点
+
+        var carMk = new BMap.Marker(pts[0],{icon:myIcon});
+        map.addOverlay(carMk);
+        i=0;
+        function resetMkPoint(i){
+          carMk.setPosition(pts[i]);
+          if(i < paths){
+            setTimeout(function(){
+              i++;
+              resetMkPoint(i);
+            },2000);
+          }
+        }
+        setTimeout(function(){
+          resetMkPoint(5);
+        },1000)
+
+      });
+    }
+
+    setTimeout(function(){
+      run();
+    },1500);
+
+//滚动条
+    var speed=100
+    var demo=document.getElementById("demo");
+    var demo2=document.getElementById("demo2");
+    var demo1=document.getElementById("demo1");
+    demo2.innerHTML=demo1.innerHTML
+    function Marquee(){
+        if(demo2.offsetTop-demo.scrollTop<=0)
+            demo.scrollTop-=demo1.offsetHeight
+        else{
+            demo.scrollTop++
+        }
+    }
+    var MyMar=setInterval(Marquee,speed)
+    demo.onmouseover=function() {clearInterval(MyMar)}
+    demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+    </script>
+
+</html>

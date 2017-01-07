@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="fjsj_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="umar-a c-wh ub uc-a1">
+            <div class="ub ub-f1 uinnh2">
+                <div class="reswoman ub-img umwh3"></div>
+                <div class="ub ub-ac ub-f1 umar-l">
+                    离你最近的司机
+                </div>
+            </div>
+            <div class="ub ub-ac ub-pc c-orange uc-r1 uinn5">
+                <div  class="fa fa-angle-down ulev2 sc-text"></div>
+            </div>
+        </div>
+
+<div id="listview"  class="ubt bc-border sc-bg">
+</div>
+
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.listview.js"></script>
+    </body>
+    <script>
+
+
+   var lv = appcan.listview({
+    selector : "#listview",
+    type : "thickLine",
+    hasIcon : true,
+    hasAngle : false,
+    hasSubTitle : true,
+    multiLine : 1,
+    });
+    lv.set([{
+        title : "陈冰",
+        describe:"驾龄：5年，代驾：95次",
+        note:"距离：50m",
+        icon:"css/res/ren1.jpg",
+        id:"1"
+    }, {
+        title : "武卫东",
+        describe:"驾龄：2年，代驾：60次",
+        note:"距离：100m",
+        icon:"css/res/ren2.jpg",
+        id:"2"
+    }, {
+        title : "程玲",
+        describe:"驾龄：4年，代驾：80次",
+        note:"距离：500m",
+        icon:"css/res/ren3.jpg",
+        id:"3"
+    }, {
+        title : "刘德",
+        describe:"驾龄：4年，代驾：70次",
+        note:"距离：600m",
+        icon:"css/res/ren4.jpg",
+        id:"4"
+    }])
+    lv.on("click",function(ele,obj,curEle){
+      appcan.button("#1", "btn-act", function() {
+        uexWindow.open("ren1","0","sjxx/ren1.html","2","0","0","0","200");
+      });
+      appcan.button("#2", "btn-act", function() {
+        uexWindow.open("ren2","0","sjxx/ren2.html","2","0","0","0","200");
+      });
+      appcan.button("#3", "btn-act", function() {
+        uexWindow.open("ren3","0","sjxx/ren3.html","2","0","0","0","200");
+      });
+      appcan.button("#4", "btn-act", function() {
+        uexWindow.open("ren4","0","sjxx/ren4.html","2","0","0","0","200");
+      });
+    })
+ </script>
+</html>

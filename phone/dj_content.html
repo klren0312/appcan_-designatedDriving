@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="dj_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver" id="bill">
+
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            bill();
+        })
+        function bill() {
+            var arrData = [{
+                "month" : "2016年",
+                "income" : "0",
+                "outlay" : "195",
+                "billList" : [{
+                    "goodsImg" : "dj_content/css/myImg/fj.png",
+                    "goodsName" : "",
+                    "goodsInfor" : "旅游代驾",
+                    "time" : "2016.07.05",
+                    "price" : "-195.00",
+                    "payStatus" : "等待确认（有退款）"
+                }, {
+                    "goodsImg" : "dj_content/css/myImg/gy.png",
+                    "goodsName" : "",
+                    "goodsInfor" : "公益代驾",
+                    "time" : "2016.06.07",
+                    "price" : "0.00",
+                    "payStatus" : "交易成功"
+                }]
+            }, {
+                "month" : "2015月",
+                "income" : "0",
+                "outlay" : "258",
+                "billList" : [{
+                    "goodsImg" : "dj_content/css/myImg/jiu.png",
+                    "goodsName" : "",
+                    "goodsInfor" : "酒后代驾",
+                    "time" : "2015.02.15",
+                    "price" : "-38.00",
+                    "payStatus" : "交易成功"
+                }, {
+                    "goodsImg" : "dj_content/css/myImg/sw.png",
+                    "goodsName" : "",
+                    "goodsInfor" : "商务代驾",
+                    "time" : "2015.10.22",
+                    "price" : "-220.00",
+                    "payStatus" : "交易成功"
+                }]
+            }];
+            var tmpl = '<div class="ub ub-ver">' + '     <div class="ub t-gra5 ulev-1 uinn-pM1 c-gra1">' + '         <div class="ub-f1">${month}<span class="t-org-pM1 uinn4">|</span></div>' + '         <div class="ub-f1 tx-c">收入：${income}</div>' + '         <div class="ub-f1 tx-r">支出：${outlay}</div>' + '     </div>' + '     <div class="c-wh ">${cb:billList}</div>' + ' </div>'
+
+            var s = appcan.tempRenderList(tmpl, arrData, appcan.getObjLength(arrData), tmpleCb);
+            var d = document.createElement('DIV');
+            d.innerHTML = s;
+            $('#bill')[0].appendChild(d);
+        }
+
+        function tmpleCb(a, b) {
+            var str = '';
+            switch(b[1]) {
+            case "billList":
+                var arr1 = a['billList'];
+                for (var i = 0; i < arr1.length; i++) {
+                    str += '<ul ontouchstart="appcan.touch(\'btn-act\')" class="ubb ub b-gra-pM1 bc-text lis">' + '             <li class="ub-img ub ub-ver mar-ar1">' + '             	<div class="ub-img uh-app1 uw-app2" style="background-image:url(' + arr1[i].goodsImg + ');"></div>' + '				<div class="ut-s t-gra5 uw-app2 umar-t ulev-1">' + arr1[i].goodsName + '</div>' + '             </li>' + '             <li class="uw-pM2 ub ub-ver ">' + '               <div class="uw-pM2 uw-pM2 uof ulev-p1 line-hei mar-ar1">' + arr1[i].goodsInfor + '</div>' + '				<div class="ut-s t-gra5 ulev-1 umar-t">' + arr1[i].time + '</div>' + '             </li>' + '             <li class="ub ub-f1 ub-ver">' + '                 <div class="tx-r">' + arr1[i].price + '</div>' + '				<div class="ulev-1 t-org-pM2 tx-r umar-t">' + arr1[i].payStatus + '</div>' + '             </li>' + '         </ul>'
+                }
+                return str;
+            }
+        }
+
+    </script>
+</html>

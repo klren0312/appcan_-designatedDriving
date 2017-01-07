@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="xy_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver" id="listview"></div>
+        <div class="ub-img uwh-ca1 catalog uabs-ca"></div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/appcan.listview.js"></script>
+    <script>
+        appcan.ready(function() {
+        appcan.initBounce();
+        });
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLineTmp",
+            hasIcon : false,
+            hasAngle : false,
+            hasSubTitle : false
+        });
+        lv.set([{
+            title : "2012级 姓名:张明  专业:计算机科学"
+        }, {
+            title : "2012级 姓名:李天  专业:金融工程"
+        }, {
+            title : "2013级 姓名:张理  专业:商务英语"
+        }, {
+            title : "2013级 姓名:李东  专业:汉语言"
+        }, {
+            title : "2014级 姓名:余果  专业:生物科学"
+        }, {
+            title : "2014级 姓名:孙田  专业:土木工程"
+        }]);
+        lv.on('click', function(ele, context, obj, subobj) {
+            //appcan.window.open(context.pagename,context.pageurl,10);
+        })
+        function catalog() {
+            var arrBook = [{
+                "id" : "00",
+                "num" : "1",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "01",
+                "num" : "2",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "02",
+                "num" : "3",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "03",
+                "num" : "4",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "04",
+                "num" : "5",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "05",
+                "num" : "6",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "06",
+                "num" : "7",
+                "chapter" : "正益移动",
+            }, {
+                "id" : "07",
+                "num" : "8",
+                "chapter" : "正益移动",
+            }];
+            var tmpl = '<div name="click" ontouchstart="appcan.touch(\'\')" onclick="sel(${id})" class="t-bla ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae">${num}.${chapter}</div>';
+            var s = appcan.tempRenderList(tmpl, arrBook, appcan.getObjLength(arrBook));
+            $$('catalog').innerHTML = s;
+        }
+
+        function sel(num) {
+            var click = document.getElementsByName('click');
+            for (var i in click) {
+                click[i].className = 't-bla ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae';
+            }
+            click[num].className = 'c-gra-ae t-wh ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae';
+            //openNewWin('book','../book/book.html');
+        }
+    </script>
+</html>

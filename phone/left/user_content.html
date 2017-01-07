@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="user_content/css/main.css">
+    </head>
+<body class="um-vp bc-bg" ontouchstart>
+    <div id='' class=' ub-fh  uof'>
+        <div id='slider' class='slider'></div>
+    </div>
+    <div class="ub bc-bg uinn-m">
+        <div class="ub line"></div>
+        <div class="right ub-f1 ub ub-ver">
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 l-circle"></div>
+                <div class="ulev-1 tit ub">
+                    基本信息
+                </div>
+            </div>
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 s-circle"></div>
+                <div class="ub ub-f1 contentbox">
+                    <div class="triangle c-wh"></div>
+                    <div class="c-wh lcontent uinn ub-f1 uc-a1">
+                        <div class="ulev-1">
+                            <p>
+                                姓名：如意代驾
+                            </p>
+                            <p>
+                                职业：CEO
+                            </p>
+                            <p>
+                               生日：1985年1月1日
+                            </p>
+                            <p>
+                                公司地址：滁州市
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 l-circle"></div>
+                <div class="ulev-1 tit ub">
+                    联系方式
+                </div>
+            </div>
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 s-circle"></div>
+                <div class="ub ub-f1 contentbox">
+                    <div class="triangle c-wh"></div>
+                    <div class="c-wh lcontent uinn ub-f1 uc-a1">
+                        <div class="ulev-1">
+                            <p>
+                                联系电话：15855050505
+                            </p>
+                            <p>
+                                电子邮箱：123456789@qq.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 l-circle"></div>
+                <div class="ulev-1 tit ub">
+                    个人名言
+                </div>
+            </div>
+            <div class="ub ub-ac">
+                <div class="umw1 umh1 s-circle"></div>
+                <div class="ub ub-f1 contentbox">
+                    <div class="triangle c-wh"></div>
+                    <div class="c-wh lcontent uinn ub-f1 uc-a1">
+                        <div class="ulev-1 basicinfo">
+                            <p>
+                              脚踏实地  
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/appcan.slider.js"></script>
+</body>
+<script>
+    appcan.ready(function() {
+        appcan.initBounce();
+        comImg();
+    })
+    function comImg() {
+        //产品详情图片轮播
+        var slider = appcan.slider({
+            selector : '#slider',
+            aspectRatio : 9 / 16,
+            hasLabel : false,
+            index : 0
+        });
+        slider.set([{
+            img : "user_content/css/images/car.png"
+        }, {
+            img : "user_content/css/images/car2.png"
+        }])
+        slider.on("clickItem", function(index, data) {
+            console.log(index, data);
+
+        })
+    }
+</script>
+</html>

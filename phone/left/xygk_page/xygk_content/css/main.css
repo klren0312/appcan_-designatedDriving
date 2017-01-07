@@ -1,0 +1,44 @@
+
+.umw-slider{
+	min-height:10.6em;
+}
+.circlebox{
+	position:absolute;
+	right:0.6em;
+	bottom:0.25em;
+}
+.circle{
+	min-height:0.1875em;
+	min-width:0.1875em;
+	border:0.09375em solid #fff;
+	border-radius:0.1875em;
+	-weibkit-radius:0.1875em;
+	margin-left:0.2em;
+}
+.selected{
+	background-color:#3195d8;
+}
+.uinn-m{
+	padding:.6em;
+}
+.tit{
+	background-color:#FFCA28;
+	padding:0.2em;
+	width:100em;
+	color:#fff;
+	display:inline-block;
+}
+.res-logo{
+	background-image:url(images/logo.png);
+}
+.umwh-logo{
+	min-height: 1.25em;
+	min-width: 4.1em;
+}
+.content{
+	line-height:1.4em;
+}
+.content p{
+	font-size:0.8em;
+	text-indent: 2em;
+}

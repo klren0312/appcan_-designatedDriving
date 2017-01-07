@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="test_content/css/main.css">
+    </head>
+    <body class="um-vp ub" ontouchstart style="background:rgba(0,0,0,0.5);">
+        <div id="commentPop" class="ub ub-ver ub-f1 ub-con">
+            <div class="ub-f1 ub-con ub-fh ub-fv" ontouchstart="appcan.touch('btn-act')" onclick="closepop()"></div>
+            <div id="content" class="c-wh uinn ub-ver">
+              
+                <div class="uinn">
+                    <div class="btn ub ub-ac tx_color ub-pc btn_color uc-a1"  id="jhdj">
+                        酒后代驾
+                    </div>
+                </div>
+                <div class="uinn">
+                    <div class="btn ub ub-ac  tx_color ub-pc btn_color uc-a1"  id="lydj">
+                        旅游代驾
+                    </div>
+                </div>
+                <div class="uinn">
+                    <div class="btn ub ub-ac tx_color ub-pc btn_color uc-a1"  id="swdj">
+                        商务代驾
+                    </div>
+                </div>                
+                <div class=" uinn">
+                    <div class="btn ub ub-ac bc-text-head ub-pc  uc-a1 uba b-gra t-gra"  id="cancel">
+                        取 消
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+			$("#commentPop").parent().height(parseInt($("#commentPop").parent().parent().height()));
+        
+        })
+        function closepop() {
+            appcan.execScriptInWin("detail", "closePop()");
+        }
+
+
+        appcan.button("#cancel", "ani-act", function() {
+            appcan.window.close(-1);
+        })
+        
+       
+        
+        appcan.button("#jhdj", "ani-act", function() {
+            uexWindow.open("dgwp2","0","djzl/jhdj.html","3","0","0","0","200");
+        })
+        
+        appcan.button("#lydj", "ani-act", function() {
+            uexWindow.open("dgwp3","0","djzl/lydj.html","3","0","0","0","200");
+        })
+        
+        appcan.button("#swdj", "ani-act", function() {
+            uexWindow.open("dgwp4","0","djzl/swdj.html","3","0","0","0","200");
+        })        
+    </script>
+</html>

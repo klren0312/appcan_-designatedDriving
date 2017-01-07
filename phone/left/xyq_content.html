@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="xyq_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+		<div id="commentPop"></div>
+        <div id="page_0" class="up ub ub-ver ub-fv" tabindex="0" style="position: relative">
+            <div class="ub ub-ver ub-fv">
+                <div class="ub ub-ver uh-metro1 ub-fh ub-img1 metroImg1">
+                    <div class="ub-f1">
+                        <div class=" uwh-logo appLogo ub-img uinn-a7"></div>
+                    </div>
+                    <div class="ub-pe uinn-metro2 ub c-m-metro1 ">
+                        <div class="ub ub-ac">
+                            <div class="ub-img Icon-metro uwh-metro2 umar-r "></div>
+                        </div>
+                        <div class="ub-f1">
+                            <div class="ulev-4 bc-text-head">
+                                滁州学院
+                            </div>
+                            <div class="ulev-2 t-org-metro1">
+                                安徽滁州
+                            </div>
+                            <div class="ulev-2 t-wh2">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" ub-f1 ub ub-ver">
+                    <!--分类开始-->
+                    <div class="ub ub-ver ub-f1">
+                        <div class="ub-f1 ub">
+                            <div id="tq" class="uw-app1 c-org-me01 ub ub-ac">
+                                <div class="umar-ar3 umar-mel1 uwh-metro3 ub-img Icon-metro1"></div>
+                                <div class="bc-text-head ulev-me1 ub-f1">
+                                    天气
+                                </div>
+                            </div>
+                            <div id="xx" class="uw-app1 c-gra-me01 ub ub-ac">
+                                <div class="umar-ar3 umar-mel1 uwh-metro3 ub-img Icon-metro2"></div>
+                                <div class="bc-text-head ulev-me1 ub-f1">
+                                    学校
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub-f1 ub">
+                            <div id="xy" class="uw-app1 c-red-me01 ub ub-ac">
+                                <div class="umar-ar3 umar-mel1 uwh-metro3 ub-img Icon-metro3"></div>
+                                <div class="bc-text-head ulev-me1 ub-f1">
+                                    校友
+                                </div>
+                            </div>
+                            <div id="hd" class="uw-app1 c-blu-me01 ub ub-ac">
+                                <div class="umar-ar3 umar-mel1 uwh-metro3 ub-img Icon-metro4"></div>
+                                <div class="bc-text-head ulev-me1 ub-f1">
+                                    互动
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--分类结束-->
+                </div>
+            </div>
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+        
+        appcan.button("#tq", "btn-act", function() {
+           uexWindow.open("tianqi","0","detail.html","1","0","0","0","200");
+        })
+        appcan.button("#xx", "btn-act", function() {
+           uexWindow.open("xuexiao","0","xygk_page/xygk.html","2","0","0","0","200");
+        })
+        appcan.button("#xy", "btn-act", function() {
+           uexWindow.open("xiaoyou","0","xy.html","1","0","0","0","200");
+        })
+        appcan.button("#hd", "btn-act", function() {
+           uexWindow.open("hudong","0","hd.html","2","0","0","0","200");
+        })                
+        
+    </script>
+</html>

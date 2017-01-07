@@ -1,0 +1,82 @@
+.color1{
+    background-color: #FE7902;
+}
+
+.color2{
+    background-color: #579DD5;
+}
+
+.res-banner{
+	background-image:url(images/banner.png);
+}
+.umh-banner{
+	min-height:7em;
+}
+.res-order{
+	background-image:url(images/order.png);
+}
+.res-wallet{
+	background-image:url(images/wallet.png);
+}
+.res-message{
+	background-image:url(images/message.png);
+}
+.res-favorite{
+	background-image:url(images/favorite.png);
+}
+.res-pwdprotection{
+	background-image:url(images/pwdprotection.png);
+}
+.res-arrow1{
+	background-image:url(images/arrow1.png);
+}
+.res-arrow2{
+	background-image:url(images/arrow2.png);
+}
+.res-arrow3{
+	background-image:url(images/arrow3.png);
+}
+.res-arrow4{
+	background-image:url(images/arrow4.png);
+}
+.res-arrow5{
+	background-image:url(images/arrow5.png);
+}
+
+.c-e8e{
+	background-color:#e8e8e8;
+}
+.umwh-m{
+	min-height:4em;
+	min-width:4em;
+}
+.uinn-m{
+	padding:.66em;
+}
+.uinn-mr{
+	padding-right:.66em;
+}
+.uinn-mtxt{
+	padding:0 0 0 3em;
+}
+.ubb-m{
+	border-bottom:1px solid #cfcfcf;
+}
+.t-bad{
+	color:#bad538;
+}
+.t-faa{
+	color:#faa701;
+}
+.t-ffe{
+	color:#ffe400;
+}
+.t-00a{
+	color:#00adef;
+}
+.t-4e6{
+	color:#4e6cbc;
+}
+.c-wh{
+    background-color: white;
+}

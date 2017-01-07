@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="ren1_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ac uinn-de1">
+            <div class="ub-img ren1 umh-list8 umw-list6"></div>
+            <div class="ub ub-ver uinn">
+                <div class="ulev-app2 t-bla ">
+                    陈冰
+                </div>
+                <div class="ub-img pingjia umw5-details umh1 uinn-details"></div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    毕业院校：滁州学院
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    电话：15755055555
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    车牌号：皖M 15456
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+驾龄：5年
+                </div>
+            </div>
+        </div>
+        <div class="btn ub ub-ac bc-text-head ub-pc bc-btn"  id="yy">
+	                   预约
+        </div>
+
+        <div class="ub ub-ac ub-f1 umar-at2 b-gra-c9 ubt">
+            <div class="tx-c t-gra c-wh ubb-list ub-f1 uinn ulev-app1">
+                评价
+            </div>
+
+        </div>
+        <div class="t-gra-book tx-l uinn ulev-app1 ulh-rd1">
+            <div id="listview"  class="ubt bc-border sc-bg">
+            
+            </div>
+
+        </div>
+        
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+   <script src="../js/appcan.listview.js"></script>
+ </body>
+    <script>
+        appcan.ready(function() {
+        });
+   
+    appcan.button("#yy", "ani-act", function() {
+        alert("预约成功！");       
+    })
+    
+    var lv = appcan.listview({
+        selector : "#listview",
+        type : "thickLine",
+        hasIcon : true,
+        hasAngle : true,
+        hasSubTitle : false,
+        multiLine : 1,
+    });
+    lv.set([{
+        title : "157****5684",
+        describe:"司机人很好！！",
+        note:"2016.6.21",
+        icontitle:"appcan",
+        id:"1"
+    }, {
+        title : "154****4324",
+        describe:"司机人很好！！",
+        note:"2016.6.25",
+        icontitle:"appcan",
+        id:"1"
+    }])
+    lv.on("click",function(ele,obj,curEle){
+    })
+ </script>
+</html>

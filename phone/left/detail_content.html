@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="index/css/main.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+
+        <style>
+            .day {
+                padding: 0.75em 0;
+                margin: 0.8em 0;
+                border-bottom: 1px solid #FFF;
+            }
+            .weather-pic {
+                display: inline-block;
+                float: right;
+                margin-top: -4em;
+                text-align: right;
+                font-size: 0.75em;
+            }
+            .weather-pic img {
+                width: 3em;
+                height: 2.5em;
+            }
+            .title {
+                display: block;
+                text-align: center;
+                line-height: 2.8em;
+                color: #000;
+                font-size: 0.9em;
+            }
+
+        </style>
+
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+
+        <div class = "city-detail content"></div>
+
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.listview.js"></script>
+        <script type="text/template" id="weather-tmp">
+
+            <div class="day">
+            <span class="temperature"><%-weather_data.temperature%></span>
+            <div>
+            <span><%-weather_data.wind%></span>
+            <span><%-weather_data.weather%></span>
+            </div>
+            <span class="weather-pic">
+            <img src="<%-weather_data.dayPictureUrl%>"><br>
+            <span><%-weather_data.date%></span>
+            </span>
+            </div>
+
+        </script>
+    </body>
+    <script>
+        function updateForecast(weatherData) {
+            var render = appcan.view.template($('#weather-tmp').html());
+            var weatherList = [];
+
+            for (var i = 0,
+                len = weatherData.length; i < len; i++) {
+                var res = render({
+                    weather_data : weatherData[i]
+                });
+                weatherList.push({
+                    title : res
+                });
+            }
+
+            var lv = appcan.listview({
+                selector : ".city-detail",
+                hasIcon : false,
+                hasAngle : false
+            });
+            lv.set(weatherList);
+        }
+
+        function updateInfo(city) {
+
+            //打开一个没有弹出框的toast
+            appcan.window.openToast({
+                msg : '加载天气数据...',
+                duration : 0,
+                position : 5,
+                type : 0
+            });
+            var weatherUrl = 'http://api.map.baidu.com/telematics/v3/weather?location=' + '%E6%BB%81%E5%B7%9E' + '&output=json&ak=ow4BIvqzQEV4dCiuVjuVG0vm';
+            appcan.request.getJSON(weatherUrl, function(data) {
+                if (data.error) {
+                    alert('获取天气出错');
+                } else {
+                    var weatherData = data.results[0].weather_data;
+                    var today = weatherData[0];
+                    updateForecast(weatherData);
+                }
+                appcan.window.closeToast();
+            });
+        }
+
+
+        appcan.ready(function() {
+            appcan.initBounce();
+            var city = appcan.locStorage.val('city');
+            updateInfo(city);
+
+        })
+    </script>
+</html>

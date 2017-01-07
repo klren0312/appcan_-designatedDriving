@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/ui-box.css">
+        <link rel="stylesheet" href="../../css/ui-base.css">
+        <link rel="stylesheet" href="../../css/ui-color.css">
+        <link rel="stylesheet" href="../../css/appcan.icon.css">
+        <link rel="stylesheet" href="../../css/appcan.control.css">
+        <link rel="stylesheet" href="xygk_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+
+        <div class="uinn-m ub-ver ub ub-ab">
+            
+            <div class="ub-f1 content">
+                <p>
+                    滁州学院是安徽省省属全日制普通本科院校，坐落在距南京50公里的历史文化名城——滁州市，与著名的琅琊山风景区和“天下第一名亭”醉翁亭相毗邻，区位优越、交通便捷、人文荟萃。学校创建于1950年，历经滁州师范学校、滁县师范学校、安徽师范大学滁县教学点（分校）办学阶段；1980年5月更名为滁州师范专科学校；2004年5月经教育部批准，升格并定名为滁州学院。2014年，成为“安徽省地方应用型高水平大学”建设学校。
+                </p>
+            
+            <div class="ub">
+                <div class="tit umar-b">
+                    <span class="ulev-1">校训</span>
+                </div>
+            </div>
+                <p>
+                    修德 求是 博学 笃行
+                </p>
+            <div class="ub">
+                <div class="tit umar-b">
+                    <span class="ulev-1">释义</span>
+                </div>
+            </div>                
+                <p>
+                    “修德”，即做人之本，应努力提高道德修养，养成良好的言行习惯。
+                </p>
+                <p>
+                    “求是”，即勇于追求真理，探索规律。
+                </p>
+                <p>
+                    “博学”，即广泛地学习各类知识。
+                </p>
+                <p>
+                    “笃行”，即强调重视实践，实现知行统一。
+                </p>
+            </div>
+        </div>
+                <div id='' class=' ub-fh  uof'>
+            <div id='slider' class='slider'></div>
+        </div>
+        <script src="../../js/appcan.js"></script>
+        <script src="../../js/appcan.control.js"></script>
+        <script src="../../js/appcan.slider.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            comImg();
+        })
+        function comImg() {
+            //产品详情图片轮播
+            var slider = appcan.slider({
+                selector : '#slider',
+                aspectRatio : 9 / 16,
+                hasLabel : false,
+                index : 0
+            });
+            slider.set([{
+                img : "xygk_content/css/images/s3.jpg"
+            }, {
+                img : "xygk_content/css/images/s4.jpg"
+            }, {
+                img : "xygk_content/css/images/s2.jpg"
+            }, {
+                img : "xygk_content/css/images/s1.jpg"
+            }])
+            slider.on("clickItem", function(index, data) {
+                console.log(index, data);
+
+            })
+        }
+    </script>
+</html>

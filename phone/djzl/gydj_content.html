@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="gydj_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <br />
+        <div class="ub ub-ver">
+   
+            <div class="ub ub-ver ub-f1">
+ 
+                <div class="uinn-a7 ubb b-org-form1 ub">
+                    <div class="uinn-form3 uc-t1 ulev-4 umar-r-form2 c-org-form1" style="color: #FFFFFF;">
+                        信息填写
+                    </div>
+
+                    </div>
+                </div>
+                <div class="uinn-a7">
+                    <ul  class=" ubb ub bc-border bc-text ub-ac uinn">
+                        <li class="ub-f1 ut-s ulev-app1">
+                            公益代驾类型
+                        </li>
+                        <li class="tx-r t-blu ulev-app1 ub-ae">
+                            <div class="uinput uinn3">
+                                <div class="select uba bc-border bc-text">
+                                    <div class="text">请选择</div>
+                                    <div class="icon"></div>
+                                    <select selectedindex="0">
+                                        <option value=0>中考代驾</option>
+                                        <option value=1>高考代驾</option>
+                                        <option value=2>雷锋代驾</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>                    
+                    <ul  class=" ubb ub bc-border bc-text ub-ac uinn">
+                        <li class="ub-f1 ut-s ulev-app1">
+                            目的地
+                        </li>
+                        <li class="tx-r t-blu ulev-app1 ub-ae">
+                            <div class="  uinn4">
+                                <input placeholder="请输入内容" type="text" class="tx-r ">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul  class=" ubb ub bc-border bc-text ub-ac uinn">
+                        <li class="ub-f1 ut-s ulev-app1">
+                           预约时间
+                        </li>
+                        <li class="tx-r t-blu ulev-app1 ub-ae">
+                            <div class=" uinn4">
+                                <input  type="time" class="tx-r ">
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="ub ub-ver ub-f1">
+           <div class="uinn-a7 ubb b-org-form1 ub">
+                    <div class="uinn-form3 uc-t1 ulev-4 umar-r-form2 c-org-form1" style="color: #FFFFFF;">
+                        驾驶员选择
+                    </div>
+
+                    </div>
+                
+                <div id="listview"  class="ubt bc-border sc-bg">
+                </div>
+
+            </div>
+            
+           <div class="btn ub ub-ac bc-text-head ub-pc bc-btn"  id="qr">
+	       确认订单
+            </div>
+
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.tab.js"></script>
+   <script src="../js/appcan.listview.js"></script>
+ </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+ 
+
+   var lv = appcan.listview({
+    selector : "#listview",
+    type : "thickLine",
+    hasIcon : true,
+    hasAngle : false,
+    hasSubTitle : true,
+    hasRadiobox: true/*是否有单选按钮*/, 
+    multiLine : 1,
+});
+lv.set([{
+    title : "陈冰",
+    describe:"驾龄：5年    价格：公益",
+    note:"毕业院校：滁州学院",
+    icon:"../css/res/ren1.jpg",
+    id:"1"
+}, {
+    title : "武卫东",
+    describe:"驾龄：2年    价格：公益",
+    note:"毕业院校：滁州学院",
+    icon:"../css/res/ren2.jpg",
+    id:"2"
+}])
+lv.on("click",function(ele,obj,curEle){
+})
+
+
+    appcan.button("#qr", "ani-act", function() {
+        alert("订单成功！");  
+    })
+ </script>
+</html>

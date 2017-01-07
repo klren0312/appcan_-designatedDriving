@@ -1,0 +1,42 @@
+
+.umh-banner{
+	min-height:25em;
+}
+.res-banner{
+	background-image:url(images/banner.png);
+}
+
+.banner{
+	box-shadow:0 -10px 10px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow:0 -10px 10px rgba(0, 0, 0, 0.1) inset;
+}
+.uinn-banner{
+	padding:.6em .6em 0;
+}
+.uinn-index{
+	padding-top:2.95em;
+	padding-bottom:2em;
+}
+.ubb-circle{
+	border:1px solid #dcdcdc;
+}
+.indexbox{
+	margin-top:-0.98em;
+}
+.circle{
+	background-color: #fff;
+	border:2px solid #218dd5;
+	min-width:0.5em;
+	min-height:0.5em;
+	border-radius:0.4em;
+	-webkit-border-radius:0.4em;
+	margin-left:0.4em;
+	margin-right:0.4em;
+}
+.block{
+	background-color: #218dd5;
+	color:#fff;
+	padding:0.375em 1.875em;
+	margin-left:0.4em;
+	margin-right:0.4em;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="djq_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+       
+        <div class="ub ub-ver uinn-m">
+            <div class="uinn-mr ub ub-ver uc-a1 c-wh">
+                <div class="ub ub-f1 c-wh t-bla ubb-m ub-ac uc-t1">
+                    <div class="ub-img res-order umwh-m"></div>
+                    <div class="ub-f1 uinn-mtxt ut-s t-bad">
+                        10元代金券
+                    </div>
+                    <div class="ub-img  umw1 umh1"></div>
+                </div>
+                <div class="ub ub-f1 c-wh t-bla ubb-m ub-ac">
+                    <div class="ub-img res-wallet umwh-m"></div>
+                    <div class="ub-f1 uinn-mtxt ut-s t-faa">
+                        20元代金券
+                    </div>
+                    <div class="ub-img   umw1 umh1"></div>
+                </div>
+                <div class="ub ub-f1 c-wh t-bla ubb-m ub-ac">
+                    <div class="ub-img res-message umwh-m"></div>
+                    <div class="ub-f1 uinn-mtxt ut-s t-ffe">
+                        40元代金券
+                    </div>
+                    <div class="ub-img   umw1 umh1"></div>
+                </div>
+                <div class="ub ub-f1 c-wh t-bla ubb-m ub-ac">
+                    <div class="ub-img res-favorite umwh-m"></div>
+                    <div class="ub-f1 uinn-mtxt ut-s t-00a">
+                        50元代金券
+                    </div>
+                    <div class="ub-img umw1 umh1"></div>
+                </div>
+                <div class="ub ub-f1 c-wh t-bla ub-ac uc-b1">
+                    <div class="ub-img res-pwdprotection umwh-m"></div>
+                    <div class="ub-f1 uinn-mtxt ut-s t-4e6">
+                        100元代金券
+                    </div>
+                    <div class="ub-img   umw1 umh1"></div>
+                </div>
+
+            </div>
+            <br />
+            <div class="btn ub ub-ac bc-text-head ub-pc color2"  id="jifen">
+	积分兑换
+            </div>
+            <div class="btn ub ub-ac bc-text-head ub-pc color1"  id="hongbao">
+    红包领取
+            </div>
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+   appcan.button("#jifen", "ani-act", function() {
+        uexWindow.open("jifen","0","jifen.html","2","0","0","0","200");
+    })
+   appcan.button("#hongbao", "ani-act", function() {
+        uexWindow.open("hongbao","0","hongbao.html","2","0","0","0","200");
+    })    
+ </script>
+</html>

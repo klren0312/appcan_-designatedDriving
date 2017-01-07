@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="hd_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver" id="comment">
+
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            showList();
+        })
+        function showList() {
+            var arrData = [{
+                "avator" : "hd_content/css/myImg/comImg.png",
+                "username" : "xxxxxxxx",
+                "time" : "1小时前",
+                "city" : "青岛市",
+                "content" : "kjskdjk",
+                "followReply" : [{
+                    "replyName" : "shoujia",
+                    "replyContent" : "good point"
+                }, {
+                    "replyName" : "oooo",
+                    "replyContent" : "werwrrwrwr"
+                }],
+                "praise" : "10"
+            }, {
+                "avator" : "hd_content/css/myImg/comImg.png",
+                "username" : "jjjjjj",
+                "time" : "30分钟前",
+                "city" : "南阳市",
+                "content" : "sdasdfsfasewsdgg",
+                "followReply" : [{
+                    "replyName" : "45454545",
+                    "replyContent" : "ssddddffdsfds"
+                }, {
+                    "replyName" : "88888",
+                    "replyContent" : "asdafasfdsabf"
+                }],
+                "praise" : "5"
+            }];
+            var tmpl = '<ul ontouchstart="appcan.touch(\'btn-act\')" class="ubb ub bc-border lis">' + '<li class="uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1" style="background-image:url(${avator});"></li>' + '<li class="ub-f1 ub ub-ver">' + '    <div class="ub ub-f1 ub-ac">' + '    	<div class="ut-s ulev-4 sc-text-active ">${username}</div>' + '    </div>' + '	<div class="ub umar-t">' + '		<div class="ub-f1 ub t-gra-comm ulev-2">' + '			<div class="umar-r-comm">${time}</div>' + '			<div>${city}</div>' + '		</div>' + '		<div class="ub ub-pe tx-r">' + '			<div class="t-gra-comm ufm1 ulev-2 umar-r">${praise}</div>' + '			<div class="ub-img praise uh-comm2 uw-comm2"></div>' + '		</div>' + '	</div>' + '	<div class="t-bla ulev-4 ub-f1 umar-t">${content}</div>' + '	${cb:followReply}' + '</li>' + '</ul>'
+            var s = appcan.tempRenderList(tmpl, arrData, appcan.getObjLength(arrData), tmpleCb);
+            var d = document.createElement('DIV');
+            d.innerHTML = s;
+            $('#comment')[0].appendChild(d);
+        }
+
+        function tmpleCb(a, b) {
+            var str = '';
+            switch(b[1]) {
+            case "followReply":
+                var arr1 = a['followReply'];
+                for (var i = 0; i < arr1.length; i++) {
+                    str += '	<div class="uba bc-border sc-bg-active  uc-a1 umar-at1">' + '		<div class="uinn-comm ulev-4">' + '			<div class="sc-text-active line-hei-com">' + arr1[i].replyName + '</div>' + '			<div class="t-gra2-comm line-hei-com">' + arr1[i].replyContent + '</div>' + '		</div>' + '	</div>'
+                }
+                return str;
+            }
+        }
+
+    </script>
+</html>

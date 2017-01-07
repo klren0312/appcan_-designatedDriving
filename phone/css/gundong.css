@@ -1,0 +1,29 @@
+
+a{
+text-decoration:none;
+color: black;
+}
+或者把这个属性分别加到a标签下，
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+
+.im_sos1{
+    background-image: url("../img/sos1.png");
+    float: right;
+}
+
+.im_sos2{
+    background-image: url("../img/sos2.png");
+    float: right;
+}
+

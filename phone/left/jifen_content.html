@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" href="../css/ui-base.css">
+        <link rel="stylesheet" href="../css/ui-color.css">
+        <link rel="stylesheet" href="../css/appcan.icon.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="jifen_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-a1">
+            <div class="ub">
+                <div class="ub ub-fh ub-img uh-pic2" style="background-image:url('jifen_content/css/myImg/banner1.png');"></div>
+            </div>
+            <div id="pictureList"></div>
+
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+		var i = 0;
+        appcan.ready(function() {
+            appcan.initBounce();
+            pictureList();
+        })
+        function pictureList() {
+            var arrData = [{
+                "picture" : "jifen_content/css/myImg/p1.jpg",
+                "pName" : "100M流量包<br>积分：400"
+            }, {
+                "picture" : "jifen_content/css/myImg/p2.png",
+                "pName" : "加湿器<br>积分：5000"
+            }, {
+                "picture" : "jifen_content/css/myImg/p3.jpg",
+                "pName" : "面包机<br>积分：6000"
+            }, {
+                "picture" : "jifen_content/css/myImg/p4.jpg",
+                "pName" : "巧克力<br>积分：500"
+            }, {
+                "picture" : "jifen_content/css/myImg/p5.jpg",
+                "pName" : "多功能刀<br>积分：700"
+            }, {
+                "picture" : "jifen_content/css/myImg/p6.jpg",
+                "pName" : "智能小夜灯<br>积分：3000"
+            }];
+            var tmpl = '${cb:begin}' + '	<div class="ub ub-ver umar-ar6 p-w0">' + '		<div class="ub-f1 mar-ar1 ub-img uh-pic3 ub-fh" style="background-image:url(${picture});"></div>' + '		<div class="ut-s sc-text ulev-4 l-h-pic umar-t tx-c">${pName}</div>' + '	</div>${cb:end}'
+            var s = appcan.tempRenderList(tmpl, arrData, appcan.getObjLength(arrData), tmpleCb);
+            $('#pictureList').html(s);
+        }
+
+        
+        function tmpleCb(a, b) {
+            switch (b[1]) {
+            case 'begin':
+                i++;
+                if (i % 3 == 1) {
+                    return '<div class="ub uinn-p2">'
+                }
+                return '';
+            case 'end':
+
+                if (i % 3 == 0) {
+                    return '</div>'
+                }
+                return '';
+            }
+        }
+    </script>
+</html>

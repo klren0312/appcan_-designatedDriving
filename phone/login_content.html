@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="login_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub logoBg2 ub-img1 ub-fv">
+            <div class="ub ub-ver uinn-a3 ub-f1">
+                <div class="ub ub-ver ub-ac uinn-pLt1">
+                    <div class="logo3 ub-img uwh-pL1"></div>
+                </div>
+                <div class="ub ub-ver ub-pe ub-f1 uinn-pLb1">
+
+                    <div class="uinn login">
+                        <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1" >
+                            一键快速登陆
+                        </div>
+                    </div>
+                     <div class="uinn reg">
+                        <div class="btn ub ub-ac bc-text-head ub-pc sc-btn uc-a1" >
+                            注册
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+        appcan.button(".btn", "ani-act", function() {
+        })
+        
+        appcan.button(".login", "btn-act", function() {
+            uexWindow.open("login","0","map.html","2","0","0","0","200");
+        })
+        appcan.button(".reg", "btn-act", function() {
+            uexWindow.open("reg","0","reg.html","2","0","0","0","200");
+        })
+
+    </script>
+</html>

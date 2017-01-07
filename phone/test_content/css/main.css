@@ -1,0 +1,38 @@
+.tx_color{
+    color: #416F00;
+    font-size: 5em;
+}
+.btn_color{
+    background-color: #66C769;
+}
+.c-red{
+	background-color:#D13434;
+}
+.c-blue{
+	background-color:#218DD5;
+}
+.b-gra{
+	border-color:#a4a4a4;
+}
+.t-gra
+{
+	color:#a1a1a1;
+}
+.uh .btn,.uf .btn{
+	display: inline-block;
+	font-size: .8125em;
+	margin: 0
+}
+.btn
+{
+	font-size: 1em;
+	text-align:center;
+}
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.c-wh{
+    background-color: white;
+}

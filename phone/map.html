@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" type="text/css" href="css/gundong.css"/>
+        
+    </head>
+    <body class="um-vp " ontouchstart>
+       
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub bc-head">
+                <div class="nav-btn " id="nav-left">
+                     <div class="fa fa-user fa-2x" onclick="openLeftSlidingWin()"></div>
+                </div>
+               
+                <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">如意代驾</h1>
+                <div class="nav-btn nav-bt" id="nav-right"  onclick="alert('是否要一键求救？');uexCall.call('110');" >                  
+                        <div style="margin-right: 1em;font-weight:900;color: orange;" >一键求救</div>
+                </div>
+            </div>
+            <!--header结束-->
+                
+        
+            <!--content开始-->
+            <div id="content" class="ub-f1 tx-l">
+                    
+            </div>
+            <!--content结束-->
+        <div class="ub">
+            <!--下单按钮  -->
+            <div id="xd" class="btn ub ub-ac bc-text-head   bc-btn"style="width: 50%"  id="btn">
+                 <div class="nav-btn" id="nav-left">
+                     <div class="fa fa-flash fa-2x  "></div>   
+                 </div>
+            
+                                          一键下单
+            </div>
+            <div id="fjsj" class="btn ub ub-ac bc-text-head "style="width: 40%;color: #F16412;background: #E3E3E3"  id="btn">
+                 <div class="nav-btn" id="nav-left">
+                     <div class="fa fa-group fa-2x"></div>
+                 </div>
+                   附近司机                       
+            </div>
+        </div>
+        </div>
+        
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            var titHeight = $('#header').offset().height;
+            appcan.frame.open("content", "map_content.html", 0, titHeight);
+            window.onorientationchange = window.onresize = function() {
+                appcan.frame.resize("content", 0, titHeight);
+            }
+            
+            appcan.window.setSlidingWindow({
+                leftSliding : {
+                    width : 580,
+                    url : "left_page_content.html"
+                },
+                animationId : '1', //仿QQ侧滑
+                bg : 'res://1_1.jpg' //仿QQ侧滑；注：res目录为js文件夹同级目录wgtRes
+            });
+        });
+        
+        
+        appcan.button("#xd", "btn-act", function() {
+            appcan.frame.open("choosepic","test_content.html"); 
+           
+        })
+        
+        appcan.button("#fjsj", "btn-act", function() {
+            uexWindow.open("fjsj","0","fjsj.html","4","0","0","0","200");
+        })
+        
+        
+ 
+        function openLeftSlidingWin() {
+
+            appcan.window.toggleSlidingWindow({
+                 mark:1
+            })
+        }      
+        
+
+    </script>
+</html>
